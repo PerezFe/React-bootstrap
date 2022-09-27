@@ -2,10 +2,13 @@ import React from 'react';
 import ItemTarea from './ItemTarea';
 import {ListGroup} from 'react-bootstrap/'; // import {ListGroup, xxx} puedo invocar mas componentes
 
-const ListaTarea = () => {
+const ListaTarea = ({arregloTarea}) => {
     return (
                 <ListGroup>
-                    <ItemTarea></ItemTarea>
+                    {
+                        arregloTarea.map((tarea, posicion)=> <ItemTarea key={posicion} nombreTarea={tarea}></ItemTarea>)
+                    }
+                    
                 </ListGroup>
                 
     );
